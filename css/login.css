@@ -7,9 +7,54 @@
   margin: 0 auto;
   color: #fff;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .login_btn_submit:hover {
   color: #fff;
   text-decoration: none;
+}
+
+.login_btn_submit2 {
+  padding: 1.1rem 13rem;
+  border-radius: 7px;
+  border: none;
+  margin-left: 25% !important;
+  background: #fff;
+  border: 1px solid #77ad41;
+  margin: 3rem auto;
+  color: #77ad41;
+  text-decoration: none;
+  display: none;
+  cursor: pointer;
+  transition: 0.1s linear;
+}
+.login_btn_submit2:hover {
+  color: #fff;
+  transition: 0.1s linear;
+  background: linear-gradient(#b0d65f, #77ad41);
+  text-decoration: none;
+}
+.visibleaft {
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .login_btn_submit,
+  .login_btn_submit2 {
+    padding: 1rem 2rem;
+    display: block;
+    margin: 1rem 16rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .login_btn_submit,
+  .login_btn_submit2 {
+    padding: 1rem 2rem;
+    display: block;
+    margin: 1rem 7rem;
+    text-align: center;
+  }
 }
