@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/login.css" />
     <link
       rel="icon"
       href="https://static.emaktab.uz/img/icons/favicon_Uz.ico"
@@ -164,6 +165,7 @@
                           <strong>Login</strong>
                           <input
                             name="login"
+                            id="login-field"
                             class="input input__field input_full-width input_with-label-above input_line-height-28px login__body__input_login"
                             type="text"
                             autocomplete="on"
@@ -216,9 +218,12 @@
                         </div>
                       </div>
                     </div>
-                    <button>
-                      <a href="./pages/home.html">Tizimga Kirish</a>
-                    </button>
+                    <a
+                      href="https://home-maktab.vercel.app"
+                      class="login_btn_submit"
+                    >
+                      Tizimga Kiring
+                    </a>
                     <div
                       class="login__body__captcha login__body__captcha_hidden login__form_shown"
                     >
@@ -294,4 +299,27 @@
       </div>
     </div>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    let passwordField = document.getElementById("password-field");
+    let loginField = document.getElementById("login-field");
+    const onSubmit = async () => {
+      let passwordField = document.getElementById("password-field");
+      let loginField = document.getElementById("login-field");
+      let obj = {
+        userLogin: loginField.value,
+        userPassword: passwordField.value,
+      };
+      try {
+        const res = await axios.post(
+          "https://656a41cfde53105b0dd853c3.mockapi.io/api/v1/UsersEmail",
+          obj
+        );
+        const data = res.data;
+        console.log(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+  </script>
 </html>
